@@ -1,3 +1,3 @@
-import config from "@hris/eslint/prettier-base";
+import config from '@hris/eslint-config/prettier-base';
 
 export default config;
