@@ -10,6 +10,7 @@ module.exports =  {
     parserOpts: {
       // Regex ini mendukung: ":emoji: type(scope): subject" ATAU "type(scope): subject"
       // Gitmoji opsional di awal: (?:(:[\w\-]+:|[^\x00-\x7F]+)\s)?
+      // eslint-disable-next-line no-control-regex
       headerPattern: /^(?:(:[\w\-]+:|[^\x00-\x7F]+)\s)?(\w+)(?:\(([^)]+)\))?!?: (.+)$/,
       headerCorrespondence: ["emoji", "type", "scope", "subject"],
     },
@@ -59,6 +60,7 @@ module.exports =  {
         'contracts',
         'events',
         'eslint-config',
+        'jest-config',
         'ts-config',
         'prettier-config',
         
