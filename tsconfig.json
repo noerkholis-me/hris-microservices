@@ -1,0 +1,3 @@
+{
+  "extends": "@hris/typescript-config/base.json"
+}
