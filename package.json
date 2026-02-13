@@ -11,30 +11,30 @@
     "prepare": "husky install",
     "commit": "cz"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
     "@hris/eslint-config": "*",
     "@hris/typescript-config": "*",
-    "commitizen": "^4.3.1",
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
     "cz-conventional-changelog": "^3.3.0",
+    "commitizen": "^4.3.1",
     "husky": "^8.0.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "turbo": "^2.8.7"
   },
+  "packageManager": "npm@11.6.2",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
-  },
-  "packageManager": "npm@11.6.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  }
 }
