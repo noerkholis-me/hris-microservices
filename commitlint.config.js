@@ -82,10 +82,10 @@ module.exports =  {
         'readme',
         'adr',
         'api-docs',
+        'guide',
 
         'husky',
         'commitlint',
-        'cz-conventional-changelog',
         'lint-staged',
         'prettier',
         'turborepo',
