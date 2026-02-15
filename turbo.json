@@ -1,11 +1,20 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   // "ui": "tui",
+  "globalDependencies": [".env", "tsconfig.json"],
+  "globalEnv": [
+    "NODE_ENV",
+    "DATABASE_URL",
+    "REDIS_HOST",
+    "RABBITMQ_HOST",
+    "JWT_SECRET",
+    "AUTH_DATABASE_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -16,6 +25,16 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "prisma:generate": {
+      "cache": false
+    },
+    "prisma:migrate": {
+      "cache": false,
+      "persistent": true
+    },
+    "prisma:studio": {
+      "cache": false
     },
     "clean": {
       "cache": false

@@ -1,0 +1,44 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "Returns the current health status of the API",
+        "operationId": "HealthController_getHealth",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Health Check",
+        "tags": ["Health"]
+      }
+    },
+    "/api/ping": {
+      "get": {
+        "description": "Return Pong",
+        "operationId": "HealthController_getPing",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Ping API",
+        "tags": ["Health"]
+      }
+    }
+  },
+  "info": {
+    "title": "HRIS - Auth Service",
+    "description": "Auth Service API",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}

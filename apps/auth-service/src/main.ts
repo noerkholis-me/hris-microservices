@@ -41,7 +41,7 @@ async function bootstrap() {
 
   SwaggerModule.setup('api/docs', app, document);
 
-  const PORT = configService.get<string>('PORT', '3000');
+  const PORT = configService.get<number>('AUTH_SERVICE_PORT');
   await app.listen(PORT, '0.0.0.0');
 
   logger.log(`🚀 Application is running on: http://localhost:${PORT}/api/v1`);
