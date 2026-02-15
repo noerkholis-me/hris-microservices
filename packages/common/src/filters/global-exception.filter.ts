@@ -43,32 +43,6 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       );
     }
 
-    const isSSR = request.accepts('html') && !request.url.startsWith('/api/');
-
-    if (isSSR) {
-      if (
-        status === HttpStatus.UNAUTHORIZED ||
-        status === HttpStatus.FORBIDDEN
-      ) {
-        return response.redirect('/login');
-      }
-
-      if (status === HttpStatus.NOT_FOUND) {
-        return response
-          .status(status)
-          .render('errors/404', { title: 'Not Found' });
-      }
-
-      const errorMessage = Array.isArray(message)
-        ? message.join(', ')
-        : message;
-      return response.status(status).render('errors/error', {
-        title: 'Error',
-        statusCode: status,
-        message: errorMessage,
-      });
-    }
-
     const errorResponse: ApiErrorResponse = {
       statusCode: status,
       message,
