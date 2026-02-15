@@ -1,4 +1,5 @@
-import { NestFactory } from '@nestjs/core';
+import { GlobalExceptionFilter, TransformInterceptor } from '@hris/common';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -11,10 +12,10 @@ async function bootstrap() {
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService = app.get(ConfigService);
-  // const reflector = app.get(Reflector);
+  const reflector = app.get(Reflector);
 
-  // app.useGlobalInterceptors(new TransformInterceptor(reflector));
-  // app.useGlobalFilters(new GlobalExceptionFilter());
+  app.useGlobalInterceptors(new TransformInterceptor(reflector));
+  app.useGlobalFilters(new GlobalExceptionFilter());
 
   app.enableCors();
 
