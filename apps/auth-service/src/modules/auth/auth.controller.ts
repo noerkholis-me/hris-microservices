@@ -15,7 +15,7 @@ import {
   JwtAuthGuard,
   CurrentUser,
 } from '@hris/common';
-import type { AuthenticatedUser } from '@hris/common';
+import type { AuthenticatedUser } from '@hris/contracts';
 import { RegisterDto, LoginDto } from '@hris/contracts';
 import type { Response } from 'express';
 
@@ -43,7 +43,7 @@ export class AuthController {
     @Ip() ip: string,
     @Headers('user-agent') userAgent: string,
   ) {
-    const { accessToken, refreshToken } = await this.authService.login(
+    const { accessToken, refreshToken, user } = await this.authService.login(
       dto,
       ip,
       userAgent || '',
@@ -63,7 +63,7 @@ export class AuthController {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
-    return { accessToken, refreshToken };
+    return { accessToken, refreshToken, user };
   }
 
   @ApiOperation({ summary: 'Refresh token' })
@@ -79,7 +79,7 @@ export class AuthController {
     refreshToken: string,
     @Res({ passthrough: true }) response: Response,
   ) {
-    const { accessToken } = await this.authService.refresh(refreshToken);
+    const { accessToken, user } = await this.authService.refresh(refreshToken);
 
     response.cookie('accessToken', accessToken, {
       httpOnly: true,
@@ -88,7 +88,7 @@ export class AuthController {
       maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
     });
 
-    return { accessToken };
+    return { accessToken, user };
   }
 
   @ApiOperation({ summary: 'Logout' })
