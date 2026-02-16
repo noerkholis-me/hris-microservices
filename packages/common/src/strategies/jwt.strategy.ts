@@ -38,6 +38,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       sub: payload.sub,
       email: payload.email,
       permissions: payload.permissions,
+      roles: payload.roles,
+      employeeId: payload.employeeId,
+      iat: payload.iat,
+      exp: payload.exp,
     };
 
     this.logger.debug(`User authenticated: ${user.email} (${user.sub})`);
