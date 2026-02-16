@@ -4,12 +4,12 @@
  */
 const config = {
   semi: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   singleQuote: true,
   printWidth: 80,
   tabWidth: 2,
-  arrowParens: "always",
-  endOfLine: "lf",
+  arrowParens: 'always',
+  endOfLine: 'lf',
   bracketSpacing: true,
   useTabs: false,
 };
