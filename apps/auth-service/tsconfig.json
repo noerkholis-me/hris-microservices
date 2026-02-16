@@ -10,6 +10,6 @@
       "@modules/*": ["src/modules/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "prisma/seed.ts", "prisma.config.ts"],
   "exclude": ["node_modules", "dist", "test", "src/generated"]
 }
