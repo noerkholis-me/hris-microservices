@@ -6,7 +6,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthenticatedUser } from '../types';
+import { AuthenticatedUser } from '@hris/contracts';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {

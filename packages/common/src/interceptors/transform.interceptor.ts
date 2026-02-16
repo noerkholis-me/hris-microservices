@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Reflector } from '@nestjs/core';
 import { SUCCESS_MESSAGE_KEY } from '../decorators/success-message.decorator';
-import { ApiResponse } from '../types';
 import { RENDER_METADATA } from '@nestjs/common/constants';
+import { ApiResponse } from '@hris/contracts';
 
 @Injectable()
 export class TransformInterceptor<T> implements NestInterceptor<

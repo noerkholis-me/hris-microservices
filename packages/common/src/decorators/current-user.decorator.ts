@@ -1,9 +1,9 @@
+import { AuthenticatedUser } from '@hris/contracts';
 import {
   createParamDecorator,
   ExecutionContext,
   UnauthorizedException,
 } from '@nestjs/common';
-import { AuthenticatedUser } from '../types';
 
 export const CurrentUser = createParamDecorator(
   (data: keyof AuthenticatedUser, ctx: ExecutionContext) => {

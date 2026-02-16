@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Request } from 'express';
-import { AuthenticatedUser, JwtPayload } from '../types';
+import { AuthenticatedUser, JwtPayload } from '@hris/contracts';
 
 const cookieExtractor = (req: Request): string | null => {
   if (req && req.cookies) {

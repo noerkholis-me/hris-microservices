@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { PERMISSIONS_KEY } from '../decorators/permission.decorator';
-import { AuthenticatedUser } from '../types';
+import { AuthenticatedUser } from '@hris/contracts';
 
 interface RequestWithUser {
   user?: AuthenticatedUser;

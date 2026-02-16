@@ -1,3 +1,4 @@
+import { ApiErrorResponse } from '@hris/contracts';
 import {
   ExceptionFilter,
   Catch,
@@ -7,7 +8,6 @@ import {
   HttpException,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { ApiErrorResponse } from '../types';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
