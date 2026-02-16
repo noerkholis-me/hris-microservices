@@ -1,0 +1,1691 @@
+<repomix><file_summary>This file is a merged representation of a subset of the codebase, containing specifically included files and files not matching ignore patterns, combined into a single document by Repomix.
+The content has been processed where comments have been removed, empty lines have been removed, content has been formatted for parsing in xml style, content has been compressed (code blocks are separated by ⋮---- delimiter).<purpose>This file contains a packed representation of a subset of the repository&apos;s contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.</purpose><file_format>The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file</file_format><usage_guidelines>- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.</usage_guidelines><notes>- Some files may have been excluded based on .gitignore rules and Repomix&apos;s configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: apps/**/*, package.json, tsconfig.json, commitlint.config.js, eslint.config.mjs, jest.config.js
+- Files matching these patterns are excluded: **/node_modules/**, **/public/**, **/swagger-spec.json, **/migration/**, **/dist/**, **/.cache/**, **/coverage/**, **/tmp/**, **/.vercel/**, **/.next/**, **/*.log, **/package-lock.json, **/pnpm-lock.yaml, **/yarn.lock, **/.env*, **/generated/prisma/**
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Code comments have been removed from supported file types
+- Empty lines have been removed from all files
+- Content has been formatted for parsing in xml style
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)</notes></file_summary><directory_structure>.husky/
+.turbo/
+apps/
+apps/attendance-service/
+apps/attendance-service/.turbo/
+apps/attendance-service/prisma/
+apps/attendance-service/src/
+apps/attendance-service/src/generated/
+apps/attendance-service/src/modules/
+apps/attendance-service/src/modules/auth/
+apps/attendance-service/src/modules/health/
+apps/attendance-service/test/
+apps/auth-service/
+apps/auth-service/.turbo/
+apps/auth-service/prisma/
+apps/auth-service/prisma/migrations/
+apps/auth-service/prisma/migrations/20260214085503_init_auth_db/
+apps/auth-service/src/
+apps/auth-service/src/generated/
+apps/auth-service/src/modules/
+apps/auth-service/src/modules/auth/
+apps/auth-service/src/modules/health/
+apps/auth-service/src/modules/prisma/
+apps/auth-service/test/
+apps/docs/
+apps/docs/.turbo/
+apps/docs/app/
+apps/docs/app/fonts/
+apps/web/
+apps/web/.turbo/
+apps/web/app/
+apps/web/app/fonts/
+docs/
+docs/architecture/
+docs/architecture/adr/
+docs/architecture/diagrams/
+docs/database/
+docs/guides/
+docs/planning/
+docs/scripts/
+docs/setup/
+infrastructure/
+infrastructure/docker/
+infrastructure/scirpts/
+packages/
+packages/common/
+packages/common/.turbo/
+packages/common/src/
+packages/common/src/constants/
+packages/common/src/decorators/
+packages/common/src/errors/
+packages/common/src/filters/
+packages/common/src/guards/
+packages/common/src/interceptors/
+packages/common/src/strategies/
+packages/common/src/types/
+packages/common/src/utils/
+packages/contracts/
+packages/contracts/.turbo/
+packages/contracts/src/
+packages/contracts/src/dtos/
+packages/contracts/src/dtos/attendance/
+packages/contracts/src/dtos/auth/
+packages/eslint-config/
+packages/events/
+packages/events/.turbo/
+packages/events/src/
+packages/events/src/auth/
+packages/events/src/employee/
+packages/jest-config/
+packages/jest-config/.turbo/
+packages/jest-config/src/
+packages/typescript-config/
+packages/ui/
+packages/ui/src/
+apps/attendance-service/.gitignore
+apps/attendance-service/.prettierrc.mjs
+apps/attendance-service/Dockerfile
+apps/attendance-service/eslint.config.mjs
+apps/attendance-service/jest.config.ts
+apps/attendance-service/nest-cli.json
+apps/attendance-service/package.json
+apps/attendance-service/prisma.config.ts
+apps/attendance-service/prisma/schema.prisma
+apps/attendance-service/README.md
+apps/attendance-service/src/app.module.ts
+apps/attendance-service/src/main.ts
+apps/attendance-service/src/modules/health/health.controller.spec.ts
+apps/attendance-service/src/modules/health/health.controller.ts
+apps/attendance-service/src/modules/health/health.module.ts
+apps/attendance-service/src/modules/health/health.service.spec.ts
+apps/attendance-service/src/modules/health/health.service.ts
+apps/attendance-service/test/app.e2e-spec.ts
+apps/attendance-service/test/jest-e2e.json
+apps/attendance-service/tsconfig.build.json
+apps/attendance-service/tsconfig.json
+apps/auth-service/.gitignore
+apps/auth-service/.prettierrc.mjs
+apps/auth-service/Dockerfile
+apps/auth-service/eslint.config.mjs
+apps/auth-service/jest.config.ts
+apps/auth-service/nest-cli.json
+apps/auth-service/package.json
+apps/auth-service/prisma.config.ts
+apps/auth-service/prisma/migrations/20260214085503_init_auth_db/migration.sql
+apps/auth-service/prisma/migrations/migration_lock.toml
+apps/auth-service/prisma/schema.prisma
+apps/auth-service/README.md
+apps/auth-service/src/app.module.ts
+apps/auth-service/src/main.ts
+apps/auth-service/src/modules/auth/auth.controller.spec.ts
+apps/auth-service/src/modules/auth/auth.controller.ts
+apps/auth-service/src/modules/auth/auth.module.ts
+apps/auth-service/src/modules/auth/auth.service.spec.ts
+apps/auth-service/src/modules/auth/auth.service.ts
+apps/auth-service/src/modules/health/health.controller.spec.ts
+apps/auth-service/src/modules/health/health.controller.ts
+apps/auth-service/src/modules/health/health.module.ts
+apps/auth-service/src/modules/health/health.service.spec.ts
+apps/auth-service/src/modules/health/health.service.ts
+apps/auth-service/src/modules/prisma/prisma.module.ts
+apps/auth-service/src/modules/prisma/prisma.service.ts
+apps/auth-service/test/app.e2e-spec.ts
+apps/auth-service/test/jest-e2e.json
+apps/auth-service/tsconfig.build.json
+apps/auth-service/tsconfig.json
+apps/docs/.gitignore
+apps/docs/app/favicon.ico
+apps/docs/app/fonts/GeistMonoVF.woff
+apps/docs/app/fonts/GeistVF.woff
+apps/docs/app/globals.css
+apps/docs/app/layout.tsx
+apps/docs/app/page.module.css
+apps/docs/app/page.tsx
+apps/docs/eslint.config.js
+apps/docs/next.config.js
+apps/docs/package.json
+apps/docs/README.md
+apps/docs/tsconfig.json
+apps/web/.gitignore
+apps/web/app/favicon.ico
+apps/web/app/fonts/GeistMonoVF.woff
+apps/web/app/fonts/GeistVF.woff
+apps/web/app/globals.css
+apps/web/app/layout.tsx
+apps/web/app/page.module.css
+apps/web/app/page.tsx
+apps/web/eslint.config.js
+apps/web/next.config.js
+apps/web/package.json
+apps/web/README.md
+apps/web/tsconfig.json
+commitlint.config.js
+eslint.config.mjs
+package.json
+tsconfig.json</directory_structure><files>This section contains the contents of the repository&apos;s files.<file path="apps/attendance-service/.gitignore"># compiled output
+/dist
+/node_modules
+/build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+/generated/prisma</file><file path="apps/attendance-service/.prettierrc.mjs">/** @type {import(&quot;prettier&quot;).Config} */</file><file path="apps/attendance-service/Dockerfile"># Stage 1: Build
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy root package files
+COPY package*.json ./
+COPY turbo.json ./
+
+# Copy workspace configurations
+COPY packages ./packages
+COPY apps/attendance-service ./apps/attendance-service
+
+# Install dependencies
+RUN npm ci
+
+# Build the service and its dependencies
+RUN npx turbo run build --filter=attendance-service...
+
+# Stage 2: Production
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# Copy built artifacts
+COPY --from=builder /app/apps/attendance-service/dist ./dist
+COPY --from=builder /app/apps/attendance-service/package.json ./package.json
+
+# If you need workspace dependencies, you might need to copy them or use &apos;turbo prune&apos;
+# For now, we copy the node_modules from builder which contains everything
+COPY --from=builder /app/node_modules ./node_modules
+
+# Prisma
+COPY --from=builder /app/apps/attendance-service/prisma ./prisma
+
+# Generate Prisma Client (Required for Linux binary)
+RUN npx prisma generate
+
+EXPOSE 3001
+
+CMD [&quot;node&quot;, &quot;dist/main.js&quot;]</file><file path="apps/attendance-service/eslint.config.mjs">/** @type {import(&quot;eslint&quot;).Linter.Config} */</file><file path="apps/attendance-service/jest.config.ts">import { nestConfig } from &apos;@hris/jest-config&apos;;</file><file path="apps/attendance-service/nest-cli.json">{
+  &quot;$schema&quot;: &quot;https://json.schemastore.org/nest-cli&quot;,
+  &quot;collection&quot;: &quot;@nestjs/schematics&quot;,
+  &quot;sourceRoot&quot;: &quot;src&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;deleteOutDir&quot;: true
+  }
+}</file><file path="apps/attendance-service/package.json">{
+  &quot;name&quot;: &quot;attendance-service&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;author&quot;: &quot;&quot;,
+  &quot;private&quot;: true,
+  &quot;license&quot;: &quot;UNLICENSED&quot;,
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;nest build&quot;,
+    &quot;format&quot;: &quot;prettier --write \&quot;src/**/*.ts\&quot; \&quot;test/**/*.ts\&quot;&quot;,
+    &quot;start&quot;: &quot;nest start&quot;,
+    &quot;dev&quot;: &quot;nest start --watch&quot;,
+    &quot;start:debug&quot;: &quot;nest start --debug --watch&quot;,
+    &quot;start:prod&quot;: &quot;node dist/main&quot;,
+    &quot;lint&quot;: &quot;eslint \&quot;{src,apps,libs,test}/**/*.ts\&quot; --fix&quot;,
+    &quot;test&quot;: &quot;jest&quot;,
+    &quot;test:watch&quot;: &quot;jest --watch&quot;,
+    &quot;test:cov&quot;: &quot;jest --coverage&quot;,
+    &quot;test:debug&quot;: &quot;node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand&quot;,
+    &quot;test:e2e&quot;: &quot;jest --config ./test/jest-e2e.json&quot;,
+    &quot;prisma:generate&quot;: &quot;prisma generate&quot;,
+    &quot;prisma:migrate&quot;: &quot;prisma migrate dev&quot;,
+    &quot;prisma:studio&quot;: &quot;prisma studio&quot;,
+    &quot;type-check&quot;: &quot;tsc --noEmit&quot;,
+    &quot;clean&quot;: &quot;rm -rf dist .turbo&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hris/common&quot;: &quot;*&quot;,
+    &quot;@hris/contracts&quot;: &quot;*&quot;,
+    &quot;@hris/events&quot;: &quot;*&quot;,
+    &quot;@nestjs/common&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/config&quot;: &quot;^4.0.3&quot;,
+    &quot;@nestjs/core&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/microservices&quot;: &quot;^11.1.13&quot;,
+    &quot;@nestjs/platform-express&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/swagger&quot;: &quot;^11.2.6&quot;,
+    &quot;amqp-connection-manager&quot;: &quot;^5.0.0&quot;,
+    &quot;amqplib&quot;: &quot;^0.10.9&quot;,
+    &quot;reflect-metadata&quot;: &quot;^0.2.2&quot;,
+    &quot;rxjs&quot;: &quot;^7.8.2&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@hris/eslint-config&quot;: &quot;*&quot;,
+    &quot;@hris/jest-config&quot;: &quot;*&quot;,
+    &quot;@hris/typescript-config&quot;: &quot;*&quot;,
+    &quot;@jest/globals&quot;: &quot;^30.2.0&quot;,
+    &quot;@nestjs/cli&quot;: &quot;^11.0.14&quot;,
+    &quot;@nestjs/schematics&quot;: &quot;^11.0.9&quot;,
+    &quot;@nestjs/testing&quot;: &quot;^11.1.11&quot;,
+    &quot;@types/amqplib&quot;: &quot;^0.10.8&quot;,
+    &quot;@types/express&quot;: &quot;^5.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^22.10.7&quot;,
+    &quot;@types/supertest&quot;: &quot;^6.0.2&quot;,
+    &quot;eslint&quot;: &quot;^9.39.2&quot;,
+    &quot;prisma&quot;: &quot;^7.4.0&quot;,
+    &quot;source-map-support&quot;: &quot;^0.5.21&quot;,
+    &quot;supertest&quot;: &quot;^7.2.2&quot;,
+    &quot;ts-jest&quot;: &quot;^29.4.6&quot;,
+    &quot;ts-loader&quot;: &quot;^9.5.4&quot;,
+    &quot;ts-node&quot;: &quot;^10.9.2&quot;,
+    &quot;tsconfig-paths&quot;: &quot;^4.2.0&quot;,
+    &quot;typescript&quot;: &quot;^5.9.2&quot;
+  },
+  &quot;jest&quot;: {
+    &quot;moduleFileExtensions&quot;: [
+      &quot;js&quot;,
+      &quot;json&quot;,
+      &quot;ts&quot;
+    ],
+    &quot;rootDir&quot;: &quot;src&quot;,
+    &quot;testRegex&quot;: &quot;.*\\.spec\\.ts$&quot;,
+    &quot;transform&quot;: {
+      &quot;^.+\\.(t|j)s$&quot;: &quot;ts-jest&quot;
+    },
+    &quot;collectCoverageFrom&quot;: [
+      &quot;**/*.(t|j)s&quot;
+    ],
+    &quot;coverageDirectory&quot;: &quot;../coverage&quot;,
+    &quot;testEnvironment&quot;: &quot;node&quot;
+  }
+}</file><file path="apps/attendance-service/prisma.config.ts">import { defineConfig, env } from &apos;prisma/config&apos;;</file><file path="apps/attendance-service/prisma/schema.prisma">generator client {
+  provider        = &quot;prisma-client&quot;
+  output          = &quot;../src/generated/prisma&quot;
+  moduleFormat    = &quot;cjs&quot;
+}
+
+
+datasource db {
+  provider = &quot;postgresql&quot;
+}</file><file path="apps/attendance-service/README.md">&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;http://nestjs.com/&quot; target=&quot;blank&quot;&gt;&lt;img src=&quot;https://nestjs.com/img/logo-small.svg&quot; width=&quot;120&quot; alt=&quot;Nest Logo&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+  &lt;p align=&quot;center&quot;&gt;A progressive &lt;a href=&quot;http://nodejs.org&quot; target=&quot;_blank&quot;&gt;Node.js&lt;/a&gt; framework for building efficient and scalable server-side applications.&lt;/p&gt;
+    &lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/@nestjs/core.svg&quot; alt=&quot;NPM Version&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/l/@nestjs/core.svg&quot; alt=&quot;Package License&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/@nestjs/common.svg&quot; alt=&quot;NPM Downloads&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://circleci.com/gh/nestjs/nest&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/circleci/build/github/nestjs/nest/master&quot; alt=&quot;CircleCI&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/G7Qnnhy&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/discord-online-brightgreen.svg&quot; alt=&quot;Discord&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/nest#backer&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/nest/backers/badge.svg&quot; alt=&quot;Backers on Open Collective&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/nest#sponsor&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/nest/sponsors/badge.svg&quot; alt=&quot;Sponsors on Open Collective&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://paypal.me/kamilmysliwiec&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Donate-PayPal-ff3f59.svg&quot; alt=&quot;Donate us&quot;/&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://opencollective.com/nest#sponsor&quot;  target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg&quot; alt=&quot;Support us&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/nestframework&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/nestframework.svg?style=social&amp;label=Follow&quot; alt=&quot;Follow us on Twitter&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+  &lt;!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)--&gt;
+
+## Description
+
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+## Project setup
+
+```bash
+$ npm install
+```
+
+## Compile and run the project
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Deployment
+
+When you&apos;re ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you&apos;d like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).</file><file path="apps/attendance-service/src/app.module.ts">import { Module } from &apos;@nestjs/common&apos;;
+import { ConfigModule } from &apos;@nestjs/config&apos;;
+import { HealthModule } from &apos;@modules/health/health.module&apos;;
+⋮----
+export class AppModule</file><file path="apps/attendance-service/src/main.ts">import { NestFactory } from &apos;@nestjs/core&apos;;
+import { Logger, ValidationPipe } from &apos;@nestjs/common&apos;;
+import { DocumentBuilder, SwaggerModule } from &apos;@nestjs/swagger&apos;;
+import { NestExpressApplication } from &apos;@nestjs/platform-express&apos;;
+import { ConfigService } from &apos;@nestjs/config&apos;;
+import { AppModule } from &apos;./app.module&apos;;
+import fs from &apos;fs&apos;;
+async function bootstrap()</file><file path="apps/attendance-service/src/modules/health/health.controller.spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { HealthController } from &apos;./health.controller&apos;;</file><file path="apps/attendance-service/src/modules/health/health.controller.ts">import { Controller, Get } from &apos;@nestjs/common&apos;;
+import { HealthService } from &apos;./health.service&apos;;
+import { ApiOperation } from &apos;@nestjs/swagger&apos;;
+⋮----
+export class HealthController
+⋮----
+constructor(private readonly healthService: HealthService)
+⋮----
+getHealth(): object
+⋮----
+getPing()</file><file path="apps/attendance-service/src/modules/health/health.module.ts">import { Module } from &apos;@nestjs/common&apos;;
+import { HealthController } from &apos;./health.controller&apos;;
+import { HealthService } from &apos;./health.service&apos;;
+⋮----
+export class HealthModule</file><file path="apps/attendance-service/src/modules/health/health.service.spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { HealthService } from &apos;./health.service&apos;;</file><file path="apps/attendance-service/src/modules/health/health.service.ts">import { Injectable, Logger } from &apos;@nestjs/common&apos;;
+⋮----
+export class HealthService
+⋮----
+getHealth(): object</file><file path="apps/attendance-service/test/app.e2e-spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { INestApplication } from &apos;@nestjs/common&apos;;
+import request from &apos;supertest&apos;;
+import { App } from &apos;supertest/types&apos;;
+import { AppModule } from &apos;../src/app.module&apos;;</file><file path="apps/attendance-service/test/jest-e2e.json">{
+  &quot;moduleFileExtensions&quot;: [&quot;js&quot;, &quot;json&quot;, &quot;ts&quot;],
+  &quot;rootDir&quot;: &quot;.&quot;,
+  &quot;testEnvironment&quot;: &quot;node&quot;,
+  &quot;testRegex&quot;: &quot;.e2e-spec.ts$&quot;,
+  &quot;transform&quot;: {
+    &quot;^.+\\.(t|j)s$&quot;: &quot;ts-jest&quot;
+  }
+}</file><file path="apps/attendance-service/tsconfig.build.json">{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;exclude&quot;: [&quot;node_modules&quot;, &quot;test&quot;, &quot;dist&quot;, &quot;**/*spec.ts&quot;]
+}</file><file path="apps/attendance-service/tsconfig.json">{
+  &quot;extends&quot;: &quot;@hris/typescript-config/nestjs.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;paths&quot;: {
+      &quot;@/*&quot;: [&quot;src/*&quot;],
+      &quot;@common/*&quot;: [&quot;src/common/*&quot;],
+      &quot;@config/*&quot;: [&quot;src/config/*&quot;],
+      &quot;@modules/*&quot;: [&quot;src/modules/*&quot;]
+    }
+  },
+  &quot;include&quot;: [&quot;src/**/*&quot;],
+  &quot;exclude&quot;: [&quot;node_modules&quot;, &quot;dist&quot;, &quot;test&quot;, &quot;src/generated&quot;]
+}</file><file path="apps/auth-service/.prettierrc.mjs">/** @type {import(&quot;prettier&quot;).Config} */</file><file path="apps/auth-service/Dockerfile"># Stage 1: Build
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy root package files
+COPY package*.json ./
+COPY turbo.json ./
+
+# Copy workspace configurations
+COPY packages ./packages
+COPY apps/auth-service ./apps/auth-service
+
+# Install dependencies
+RUN npm ci
+
+# Build the service and its dependencies
+RUN npx turbo run build --filter=auth-service...
+
+# Stage 2: Production
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# Copy built artifacts
+COPY --from=builder /app/apps/auth-service/dist ./dist
+COPY --from=builder /app/apps/auth-service/package.json ./package.json
+
+# If you need workspace dependencies, you might need to copy them or use &apos;turbo prune&apos;
+# For now, we copy the node_modules from builder which contains everything
+COPY --from=builder /app/node_modules ./node_modules
+
+# Prisma
+COPY --from=builder /app/apps/auth-service/prisma ./prisma
+
+# Generate Prisma Client (Required for Linux binary)
+RUN npx prisma generate
+
+EXPOSE 3001
+
+CMD [&quot;node&quot;, &quot;dist/main.js&quot;]</file><file path="apps/auth-service/eslint.config.mjs">/** @type {import(&quot;eslint&quot;).Linter.Config} */</file><file path="apps/auth-service/jest.config.ts">import { nestConfig } from &apos;@hris/jest-config&apos;;</file><file path="apps/auth-service/nest-cli.json">{
+  &quot;$schema&quot;: &quot;https://json.schemastore.org/nest-cli&quot;,
+  &quot;collection&quot;: &quot;@nestjs/schematics&quot;,
+  &quot;sourceRoot&quot;: &quot;src&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;deleteOutDir&quot;: true
+  }
+}</file><file path="apps/auth-service/prisma.config.ts">import { defineConfig, env } from &apos;prisma/config&apos;;</file><file path="apps/auth-service/prisma/migrations/20260214085503_init_auth_db/migration.sql">CREATE TYPE &quot;LoginStatus&quot; AS ENUM (&apos;SUCCESS&apos;, &apos;FAILED&apos;, &apos;BLOCKED&apos;, &apos;SUSPICIOUS&apos;);
+CREATE TABLE &quot;users&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;email&quot; TEXT NOT NULL,
+    &quot;username&quot; TEXT NOT NULL,
+    &quot;password_hash&quot; TEXT NOT NULL,
+    &quot;email_verified&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;is_active&quot; BOOLEAN NOT NULL DEFAULT true,
+    &quot;is_suspended&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;suspended_at&quot; TIMESTAMP(3),
+    &quot;suspended_reason&quot; TEXT,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    &quot;updated_at&quot; TIMESTAMP(3) NOT NULL,
+    &quot;last_login_at&quot; TIMESTAMP(3),
+    &quot;password_changed_at&quot; TIMESTAMP(3),
+    &quot;employee_id&quot; TEXT,
+    CONSTRAINT &quot;users_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;roles&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;name&quot; TEXT NOT NULL,
+    &quot;display_name&quot; TEXT NOT NULL,
+    &quot;description&quot; TEXT,
+    &quot;is_system&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    &quot;updated_at&quot; TIMESTAMP(3) NOT NULL,
+    CONSTRAINT &quot;roles_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;user_roles&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;user_id&quot; TEXT NOT NULL,
+    &quot;role_id&quot; TEXT NOT NULL,
+    &quot;valid_from&quot; TIMESTAMP(3),
+    &quot;valid_until&quot; TIMESTAMP(3),
+    &quot;assigned_by&quot; TEXT,
+    &quot;assigned_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT &quot;user_roles_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;permissions&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;resource&quot; TEXT NOT NULL,
+    &quot;action&quot; TEXT NOT NULL,
+    &quot;scope&quot; TEXT,
+    &quot;display_name&quot; TEXT NOT NULL,
+    &quot;description&quot; TEXT,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT &quot;permissions_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;role_permissions&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;role_id&quot; TEXT NOT NULL,
+    &quot;permission_id&quot; TEXT NOT NULL,
+    &quot;granted_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    &quot;granted_by&quot; TEXT,
+    CONSTRAINT &quot;role_permissions_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;refresh_tokens&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;user_id&quot; TEXT NOT NULL,
+    &quot;token&quot; TEXT NOT NULL,
+    &quot;device_id&quot; TEXT,
+    &quot;user_agent&quot; TEXT,
+    &quot;ip_address&quot; TEXT,
+    &quot;is_revoked&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;expires_at&quot; TIMESTAMP(3) NOT NULL,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT &quot;refresh_tokens_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;login_history&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;user_id&quot; TEXT NOT NULL,
+    &quot;ip_address&quot; TEXT NOT NULL,
+    &quot;user_agent&quot; TEXT,
+    &quot;device_id&quot; TEXT,
+    &quot;status&quot; &quot;LoginStatus&quot; NOT NULL,
+    &quot;fail_reason&quot; TEXT,
+    &quot;login_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    &quot;logout_at&quot; TIMESTAMP(3),
+    CONSTRAINT &quot;login_history_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;password_resets&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;user_id&quot; TEXT NOT NULL,
+    &quot;token&quot; TEXT NOT NULL,
+    &quot;is_used&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;used_at&quot; TIMESTAMP(3),
+    &quot;expires_at&quot; TIMESTAMP(3) NOT NULL,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT &quot;password_resets_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE TABLE &quot;email_verifications&quot; (
+    &quot;id&quot; TEXT NOT NULL,
+    &quot;user_id&quot; TEXT NOT NULL,
+    &quot;token&quot; TEXT NOT NULL,
+    &quot;is_used&quot; BOOLEAN NOT NULL DEFAULT false,
+    &quot;used_at&quot; TIMESTAMP(3),
+    &quot;expires_at&quot; TIMESTAMP(3) NOT NULL,
+    &quot;created_at&quot; TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT &quot;email_verifications_pkey&quot; PRIMARY KEY (&quot;id&quot;)
+);
+CREATE UNIQUE INDEX &quot;users_email_key&quot; ON &quot;users&quot;(&quot;email&quot;);
+CREATE UNIQUE INDEX &quot;users_username_key&quot; ON &quot;users&quot;(&quot;username&quot;);
+CREATE UNIQUE INDEX &quot;users_employee_id_key&quot; ON &quot;users&quot;(&quot;employee_id&quot;);
+CREATE INDEX &quot;users_email_idx&quot; ON &quot;users&quot;(&quot;email&quot;);
+CREATE INDEX &quot;users_employee_id_idx&quot; ON &quot;users&quot;(&quot;employee_id&quot;);
+CREATE UNIQUE INDEX &quot;roles_name_key&quot; ON &quot;roles&quot;(&quot;name&quot;);
+CREATE INDEX &quot;user_roles_user_id_idx&quot; ON &quot;user_roles&quot;(&quot;user_id&quot;);
+CREATE INDEX &quot;user_roles_role_id_idx&quot; ON &quot;user_roles&quot;(&quot;role_id&quot;);
+CREATE UNIQUE INDEX &quot;user_roles_user_id_role_id_key&quot; ON &quot;user_roles&quot;(&quot;user_id&quot;, &quot;role_id&quot;);
+CREATE INDEX &quot;permissions_resource_idx&quot; ON &quot;permissions&quot;(&quot;resource&quot;);
+CREATE UNIQUE INDEX &quot;permissions_resource_action_scope_key&quot; ON &quot;permissions&quot;(&quot;resource&quot;, &quot;action&quot;, &quot;scope&quot;);
+CREATE INDEX &quot;role_permissions_role_id_idx&quot; ON &quot;role_permissions&quot;(&quot;role_id&quot;);
+CREATE INDEX &quot;role_permissions_permission_id_idx&quot; ON &quot;role_permissions&quot;(&quot;permission_id&quot;);
+CREATE UNIQUE INDEX &quot;role_permissions_role_id_permission_id_key&quot; ON &quot;role_permissions&quot;(&quot;role_id&quot;, &quot;permission_id&quot;);
+CREATE UNIQUE INDEX &quot;refresh_tokens_token_key&quot; ON &quot;refresh_tokens&quot;(&quot;token&quot;);
+CREATE INDEX &quot;refresh_tokens_user_id_idx&quot; ON &quot;refresh_tokens&quot;(&quot;user_id&quot;);
+CREATE INDEX &quot;refresh_tokens_token_idx&quot; ON &quot;refresh_tokens&quot;(&quot;token&quot;);
+CREATE INDEX &quot;refresh_tokens_expires_at_idx&quot; ON &quot;refresh_tokens&quot;(&quot;expires_at&quot;);
+CREATE INDEX &quot;login_history_user_id_idx&quot; ON &quot;login_history&quot;(&quot;user_id&quot;);
+CREATE INDEX &quot;login_history_login_at_idx&quot; ON &quot;login_history&quot;(&quot;login_at&quot;);
+CREATE UNIQUE INDEX &quot;password_resets_token_key&quot; ON &quot;password_resets&quot;(&quot;token&quot;);
+CREATE INDEX &quot;password_resets_user_id_idx&quot; ON &quot;password_resets&quot;(&quot;user_id&quot;);
+CREATE INDEX &quot;password_resets_token_idx&quot; ON &quot;password_resets&quot;(&quot;token&quot;);
+CREATE UNIQUE INDEX &quot;email_verifications_token_key&quot; ON &quot;email_verifications&quot;(&quot;token&quot;);
+CREATE INDEX &quot;email_verifications_user_id_idx&quot; ON &quot;email_verifications&quot;(&quot;user_id&quot;);
+CREATE INDEX &quot;email_verifications_token_idx&quot; ON &quot;email_verifications&quot;(&quot;token&quot;);
+ALTER TABLE &quot;user_roles&quot; ADD CONSTRAINT &quot;user_roles_user_id_fkey&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;user_roles&quot; ADD CONSTRAINT &quot;user_roles_role_id_fkey&quot; FOREIGN KEY (&quot;role_id&quot;) REFERENCES &quot;roles&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;role_permissions&quot; ADD CONSTRAINT &quot;role_permissions_role_id_fkey&quot; FOREIGN KEY (&quot;role_id&quot;) REFERENCES &quot;roles&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;role_permissions&quot; ADD CONSTRAINT &quot;role_permissions_permission_id_fkey&quot; FOREIGN KEY (&quot;permission_id&quot;) REFERENCES &quot;permissions&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;refresh_tokens&quot; ADD CONSTRAINT &quot;refresh_tokens_user_id_fkey&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;login_history&quot; ADD CONSTRAINT &quot;login_history_user_id_fkey&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;password_resets&quot; ADD CONSTRAINT &quot;password_resets_user_id_fkey&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE &quot;email_verifications&quot; ADD CONSTRAINT &quot;email_verifications_user_id_fkey&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE;</file><file path="apps/auth-service/prisma/migrations/migration_lock.toml"># Please do not edit this file manually
+# It should be added in your version-control system (e.g., Git)
+provider = &quot;postgresql&quot;</file><file path="apps/auth-service/README.md">&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;http://nestjs.com/&quot; target=&quot;blank&quot;&gt;&lt;img src=&quot;https://nestjs.com/img/logo-small.svg&quot; width=&quot;120&quot; alt=&quot;Nest Logo&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+  &lt;p align=&quot;center&quot;&gt;A progressive &lt;a href=&quot;http://nodejs.org&quot; target=&quot;_blank&quot;&gt;Node.js&lt;/a&gt; framework for building efficient and scalable server-side applications.&lt;/p&gt;
+    &lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/@nestjs/core.svg&quot; alt=&quot;NPM Version&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/l/@nestjs/core.svg&quot; alt=&quot;Package License&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/~nestjscore&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/@nestjs/common.svg&quot; alt=&quot;NPM Downloads&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://circleci.com/gh/nestjs/nest&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/circleci/build/github/nestjs/nest/master&quot; alt=&quot;CircleCI&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/G7Qnnhy&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/discord-online-brightgreen.svg&quot; alt=&quot;Discord&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/nest#backer&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/nest/backers/badge.svg&quot; alt=&quot;Backers on Open Collective&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/nest#sponsor&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/nest/sponsors/badge.svg&quot; alt=&quot;Sponsors on Open Collective&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://paypal.me/kamilmysliwiec&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Donate-PayPal-ff3f59.svg&quot; alt=&quot;Donate us&quot;/&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://opencollective.com/nest#sponsor&quot;  target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg&quot; alt=&quot;Support us&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/nestframework&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/nestframework.svg?style=social&amp;label=Follow&quot; alt=&quot;Follow us on Twitter&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+  &lt;!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)--&gt;
+
+## Description
+
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+## Project setup
+
+```bash
+$ npm install
+```
+
+## Compile and run the project
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Deployment
+
+When you&apos;re ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you&apos;d like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).</file><file path="apps/auth-service/src/modules/auth/auth.controller.spec.ts"></file><file path="apps/auth-service/src/modules/auth/auth.controller.ts">import {
+  Body,
+  Controller,
+  Post,
+  Res,
+  UseGuards,
+  Ip,
+  Headers,
+} from &apos;@nestjs/common&apos;;
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from &apos;@nestjs/swagger&apos;;
+import { AuthService } from &apos;./auth.service&apos;;
+import {
+  SuccessMessage,
+  Cookies,
+  JwtAuthGuard,
+  CurrentUser,
+} from &apos;@hris/common&apos;;
+import type { AuthenticatedUser } from &apos;@hris/common&apos;;
+import { RegisterDto, LoginDto } from &apos;@hris/contracts&apos;;
+import type { Response } from &apos;express&apos;;
+⋮----
+export class AuthController
+⋮----
+constructor(private readonly authService: AuthService)
+⋮----
+async register(@Body() registerDto: RegisterDto)
+⋮----
+async login(
+    @Body() dto: LoginDto,
+    @Res({ passthrough: true }) response: Response,
+    @Ip() ip: string,
+    @Headers(&apos;user-agent&apos;) userAgent: string,
+)
+⋮----
+async refresh(
+    @Cookies({
+      key: &apos;refreshToken&apos;,
+      required: true,
+      errorMessage: &apos;Refresh token is required&apos;,
+    })
+    refreshToken: string,
+    @Res({ passthrough: true }) response: Response,
+)
+⋮----
+async logout(
+    @Res({ passthrough: true }) response: Response,
+    @CurrentUser() user: AuthenticatedUser,
+    @Cookies({
+      key: &apos;refreshToken&apos;,
+      required: false,
+    })
+    refreshToken?: string,
+)</file><file path="apps/auth-service/src/modules/auth/auth.module.ts">import { Module } from &apos;@nestjs/common&apos;;
+import { JwtModule } from &apos;@nestjs/jwt&apos;;
+import { PassportModule } from &apos;@nestjs/passport&apos;;
+import { AuthService } from &apos;./auth.service&apos;;
+import { AuthController } from &apos;./auth.controller&apos;;
+import { ConfigService } from &apos;@nestjs/config&apos;;
+import { JwtAuthGuard, JwtStrategy } from &apos;@hris/common&apos;;
+⋮----
+export class AuthModule</file><file path="apps/auth-service/src/modules/auth/auth.service.spec.ts"></file><file path="apps/auth-service/src/modules/auth/auth.service.ts">import {
+  ConflictException,
+  Injectable,
+  Logger,
+  UnauthorizedException,
+} from &apos;@nestjs/common&apos;;
+⋮----
+import { JwtService } from &apos;@nestjs/jwt&apos;;
+import { ConfigService } from &apos;@nestjs/config&apos;;
+import { PrismaService } from &apos;../prisma/prisma.service&apos;;
+import { LoginDto, RegisterDto } from &apos;@hris/contracts&apos;;
+import { JwtPayload } from &apos;@hris/common&apos;;
+⋮----
+export class AuthService
+⋮----
+constructor(
+async register(dto: RegisterDto)
+async login(dto: LoginDto, ipAddress: string, userAgent: string)
+async refresh(refreshToken: string): Promise&lt;
+async logout(userId: string, refreshToken: string)
+private async generateToken(userId: string, email: string): Promise&lt;string&gt;
+private async generateRefreshToken(
+    userId: string,
+    email: string,
+): Promise&lt;string&gt;</file><file path="apps/auth-service/src/modules/health/health.controller.spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { HealthController } from &apos;./health.controller&apos;;</file><file path="apps/auth-service/src/modules/health/health.module.ts">import { Module } from &apos;@nestjs/common&apos;;
+import { HealthController } from &apos;./health.controller&apos;;
+import { HealthService } from &apos;./health.service&apos;;
+⋮----
+export class HealthModule</file><file path="apps/auth-service/src/modules/health/health.service.spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { HealthService } from &apos;./health.service&apos;;</file><file path="apps/auth-service/src/modules/health/health.service.ts">import { Injectable, Logger } from &apos;@nestjs/common&apos;;
+⋮----
+export class HealthService
+⋮----
+getHealth(): object</file><file path="apps/auth-service/src/modules/prisma/prisma.module.ts">import { Global, Module } from &apos;@nestjs/common&apos;;
+import { PrismaService } from &apos;./prisma.service&apos;;
+⋮----
+export class PrismaModule</file><file path="apps/auth-service/src/modules/prisma/prisma.service.ts">import { Pool } from &apos;pg&apos;;
+import { PrismaPg } from &apos;@prisma/adapter-pg&apos;;
+import {
+  Injectable,
+  Logger,
+  OnModuleDestroy,
+  OnModuleInit,
+} from &apos;@nestjs/common&apos;;
+import { env } from &apos;prisma/config&apos;;
+import { PrismaClient } from &apos;../../generated/prisma/client&apos;;
+⋮----
+export class PrismaService
+extends PrismaClient
+⋮----
+constructor()
+async onModuleInit()
+async onModuleDestroy()</file><file path="apps/auth-service/test/app.e2e-spec.ts">import { Test, TestingModule } from &apos;@nestjs/testing&apos;;
+import { INestApplication } from &apos;@nestjs/common&apos;;
+import request from &apos;supertest&apos;;
+import { App } from &apos;supertest/types&apos;;
+import { AppModule } from &apos;./../src/app.module&apos;;</file><file path="apps/auth-service/test/jest-e2e.json">{
+  &quot;moduleFileExtensions&quot;: [&quot;js&quot;, &quot;json&quot;, &quot;ts&quot;],
+  &quot;rootDir&quot;: &quot;.&quot;,
+  &quot;testEnvironment&quot;: &quot;node&quot;,
+  &quot;testRegex&quot;: &quot;.e2e-spec.ts$&quot;,
+  &quot;transform&quot;: {
+    &quot;^.+\\.(t|j)s$&quot;: &quot;ts-jest&quot;
+  }
+}</file><file path="apps/auth-service/tsconfig.build.json">{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;exclude&quot;: [&quot;node_modules&quot;, &quot;test&quot;, &quot;dist&quot;, &quot;**/*spec.ts&quot;]
+}</file><file path="apps/docs/.gitignore"># See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files (can opt-in for commiting if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts</file><file path="apps/docs/app/globals.css">:root {
+⋮----
+html,
+body {
+* {
+a {
+.imgDark {
+⋮----
+html {
+.imgLight {</file><file path="apps/docs/app/layout.tsx">import type { Metadata } from &quot;next&quot;;
+import localFont from &quot;next/font/local&quot;;
+⋮----
+export default function RootLayout({
+  children,
+}: Readonly&lt;{
+  children: React.ReactNode;
+}&gt;)</file><file path="apps/docs/app/page.module.css">.page {
+⋮----
+.main {
+.main ol {
+.main li:not(:last-of-type) {
+.main code {
+.ctas {
+.ctas a {
+a.primary {
+a.secondary {
+button.secondary {
+.footer {
+.footer a {
+.footer img {
+⋮----
+a.primary:hover {
+a.secondary:hover {
+.footer a:hover {
+⋮----
+.logo {</file><file path="apps/docs/next.config.js"></file><file path="apps/docs/README.md">This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&amp;filter=next.js&amp;utm_source=create-next-app&amp;utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.</file><file path="apps/web/.gitignore"># See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files (can opt-in for commiting if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts</file><file path="apps/web/app/globals.css">:root {
+⋮----
+html,
+body {
+* {
+a {
+.imgDark {
+⋮----
+html {
+.imgLight {</file><file path="apps/web/app/layout.tsx">import type { Metadata } from &quot;next&quot;;
+import localFont from &quot;next/font/local&quot;;
+⋮----
+export default function RootLayout({
+  children,
+}: Readonly&lt;{
+  children: React.ReactNode;
+}&gt;)</file><file path="apps/web/app/page.module.css">.page {
+⋮----
+.main {
+.main ol {
+.main li:not(:last-of-type) {
+.main code {
+.ctas {
+.ctas a {
+a.primary {
+a.secondary {
+button.secondary {
+.footer {
+.footer a {
+.footer img {
+⋮----
+a.primary:hover {
+a.secondary:hover {
+.footer a:hover {
+⋮----
+.logo {</file><file path="apps/web/next.config.js"></file><file path="apps/web/README.md">This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&amp;filter=next.js&amp;utm_source=create-next-app&amp;utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.</file><file path="apps/auth-service/.gitignore"># compiled output
+/dist
+/node_modules
+/build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+/generated/prisma</file><file path="apps/auth-service/package.json">{
+  &quot;name&quot;: &quot;auth-service&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;author&quot;: &quot;&quot;,
+  &quot;private&quot;: true,
+  &quot;license&quot;: &quot;UNLICENSED&quot;,
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;nest build&quot;,
+    &quot;format&quot;: &quot;prettier --write \&quot;src/**/*.ts\&quot; \&quot;test/**/*.ts\&quot;&quot;,
+    &quot;start&quot;: &quot;nest start&quot;,
+    &quot;dev&quot;: &quot;nest start --watch&quot;,
+    &quot;start:debug&quot;: &quot;nest start --debug --watch&quot;,
+    &quot;start:prod&quot;: &quot;node dist/main&quot;,
+    &quot;lint&quot;: &quot;eslint \&quot;{src,apps,libs,test}/**/*.ts\&quot; --fix&quot;,
+    &quot;test&quot;: &quot;jest&quot;,
+    &quot;test:watch&quot;: &quot;jest --watch&quot;,
+    &quot;test:cov&quot;: &quot;jest --coverage&quot;,
+    &quot;test:debug&quot;: &quot;node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand&quot;,
+    &quot;test:e2e&quot;: &quot;jest --config ./test/jest-e2e.json&quot;,
+    &quot;prisma:generate&quot;: &quot;prisma generate&quot;,
+    &quot;prisma:migrate&quot;: &quot;prisma migrate dev&quot;,
+    &quot;prisma:studio&quot;: &quot;prisma studio&quot;,
+    &quot;type-check&quot;: &quot;tsc --noEmit&quot;,
+    &quot;clean&quot;: &quot;rm -rf dist .turbo&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hris/common&quot;: &quot;*&quot;,
+    &quot;@hris/events&quot;: &quot;*&quot;,
+    &quot;@nestjs/common&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/config&quot;: &quot;^4.0.3&quot;,
+    &quot;@nestjs/core&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/jwt&quot;: &quot;^11.0.2&quot;,
+    &quot;@nestjs/microservices&quot;: &quot;^11.1.13&quot;,
+    &quot;@nestjs/passport&quot;: &quot;^11.0.5&quot;,
+    &quot;@nestjs/platform-express&quot;: &quot;^11.1.11&quot;,
+    &quot;@nestjs/swagger&quot;: &quot;^11.2.6&quot;,
+    &quot;@prisma/adapter-pg&quot;: &quot;^7.4.0&quot;,
+    &quot;@prisma/client&quot;: &quot;^7.4.0&quot;,
+    &quot;amqp-connection-manager&quot;: &quot;^5.0.0&quot;,
+    &quot;amqplib&quot;: &quot;^0.10.9&quot;,
+    &quot;bcrypt&quot;: &quot;^6.0.0&quot;,
+    &quot;passport&quot;: &quot;^0.7.0&quot;,
+    &quot;passport-jwt&quot;: &quot;^4.0.1&quot;,
+    &quot;reflect-metadata&quot;: &quot;^0.2.2&quot;,
+    &quot;rxjs&quot;: &quot;^7.8.2&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@hris/contracts&quot;: &quot;*&quot;,
+    &quot;@hris/eslint-config&quot;: &quot;*&quot;,
+    &quot;@hris/jest-config&quot;: &quot;*&quot;,
+    &quot;@hris/typescript-config&quot;: &quot;*&quot;,
+    &quot;@jest/globals&quot;: &quot;^30.2.0&quot;,
+    &quot;@nestjs/cli&quot;: &quot;^11.0.14&quot;,
+    &quot;@nestjs/schematics&quot;: &quot;^11.0.9&quot;,
+    &quot;@nestjs/testing&quot;: &quot;^11.1.11&quot;,
+    &quot;@types/amqplib&quot;: &quot;^0.10.8&quot;,
+    &quot;@types/bcrypt&quot;: &quot;^6.0.0&quot;,
+    &quot;@types/express&quot;: &quot;^5.0.0&quot;,
+    &quot;@types/node&quot;: &quot;^22.10.7&quot;,
+    &quot;@types/passport-jwt&quot;: &quot;^4.0.1&quot;,
+    &quot;@types/pg&quot;: &quot;^8.16.0&quot;,
+    &quot;@types/supertest&quot;: &quot;^6.0.2&quot;,
+    &quot;eslint&quot;: &quot;^9.39.2&quot;,
+    &quot;prisma&quot;: &quot;^7.4.0&quot;,
+    &quot;source-map-support&quot;: &quot;^0.5.21&quot;,
+    &quot;supertest&quot;: &quot;^7.2.2&quot;,
+    &quot;ts-jest&quot;: &quot;^29.4.6&quot;,
+    &quot;ts-loader&quot;: &quot;^9.5.4&quot;,
+    &quot;ts-node&quot;: &quot;^10.9.2&quot;,
+    &quot;tsconfig-paths&quot;: &quot;^4.2.0&quot;,
+    &quot;typescript&quot;: &quot;^5.9.2&quot;
+  },
+  &quot;jest&quot;: {
+    &quot;moduleFileExtensions&quot;: [
+      &quot;js&quot;,
+      &quot;json&quot;,
+      &quot;ts&quot;
+    ],
+    &quot;rootDir&quot;: &quot;src&quot;,
+    &quot;testRegex&quot;: &quot;.*\\.spec\\.ts$&quot;,
+    &quot;transform&quot;: {
+      &quot;^.+\\.(t|j)s$&quot;: &quot;ts-jest&quot;
+    },
+    &quot;collectCoverageFrom&quot;: [
+      &quot;**/*.(t|j)s&quot;
+    ],
+    &quot;coverageDirectory&quot;: &quot;../coverage&quot;,
+    &quot;testEnvironment&quot;: &quot;node&quot;
+  }
+}</file><file path="apps/auth-service/prisma/schema.prisma">generator client {
+  provider        = &quot;prisma-client&quot;
+  output          = &quot;../src/generated/prisma&quot;
+  moduleFormat    = &quot;cjs&quot;
+}
+
+
+datasource db {
+  provider = &quot;postgresql&quot;
+}
+
+model User {
+  id                String    @id @default(uuid())
+  email             String    @unique
+  username          String    @unique
+  passwordHash      String    @map(&quot;password_hash&quot;)
+  emailVerified     Boolean   @default(false) @map(&quot;email_verified&quot;)
+  isActive          Boolean   @default(true) @map(&quot;is_active&quot;)
+  isSuspended       Boolean   @default(false) @map(&quot;is_suspended&quot;)
+  suspendedAt       DateTime? @map(&quot;suspended_at&quot;)
+  suspendedReason   String?   @map(&quot;suspended_reason&quot;)
+
+  createdAt         DateTime  @default(now()) @map(&quot;created_at&quot;)
+  updatedAt         DateTime  @updatedAt @map(&quot;updated_at&quot;)
+  lastLoginAt       DateTime? @map(&quot;last_login_at&quot;)
+  passwordChangedAt DateTime? @map(&quot;password_changed_at&quot;)
+
+  roles             UserRole[]
+  refreshTokens     RefreshToken[]
+  loginHistory      LoginHistory[]
+  passwordResets    PasswordReset[]
+  emailVerifications EmailVerification[]
+
+  employeeId        String?   @unique @map(&quot;employee_id&quot;)
+
+  @@index([email])
+  @@index([employeeId])
+  @@map(&quot;users&quot;)
+}
+
+model Role {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  displayName String   @map(&quot;display_name&quot;)
+  description String?
+  isSystem    Boolean  @default(false) @map(&quot;is_system&quot;)
+
+  createdAt   DateTime @default(now()) @map(&quot;created_at&quot;)
+  updatedAt   DateTime @updatedAt @map(&quot;updated_at&quot;)
+
+  userRoles   UserRole[]
+  permissions RolePermission[]
+
+  @@map(&quot;roles&quot;)
+}
+
+model UserRole {
+  id         String    @id @default(uuid())
+  userId     String    @map(&quot;user_id&quot;)
+  roleId     String    @map(&quot;role_id&quot;)
+
+  validFrom  DateTime? @map(&quot;valid_from&quot;)
+  validUntil DateTime? @map(&quot;valid_until&quot;)
+
+  assignedBy String?   @map(&quot;assigned_by&quot;)
+  assignedAt DateTime  @default(now()) @map(&quot;assigned_at&quot;)
+
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role       Role      @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleId])
+  @@index([userId])
+  @@index([roleId])
+  @@map(&quot;user_roles&quot;)
+}
+
+model Permission {
+  id          String   @id @default(uuid())
+  resource    String   // employee, attendance, leave, payroll
+  action      String   // create, read, update, delete, approve
+  scope       String?  // own, department, all
+  displayName String   @map(&quot;display_name&quot;)
+  description String?
+
+  createdAt   DateTime @default(now()) @map(&quot;created_at&quot;)
+
+  rolePermissions RolePermission[]
+
+  @@unique([resource, action, scope])
+  @@index([resource])
+  @@map(&quot;permissions&quot;)
+}
+
+model RolePermission {
+  id           String     @id @default(uuid())
+  roleId       String     @map(&quot;role_id&quot;)
+  permissionId String     @map(&quot;permission_id&quot;)
+
+  grantedAt    DateTime   @default(now()) @map(&quot;granted_at&quot;)
+  grantedBy    String?    @map(&quot;granted_by&quot;)
+
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+  @@index([roleId])
+  @@index([permissionId])
+  @@map(&quot;role_permissions&quot;)
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String   @map(&quot;user_id&quot;)
+  token     String   @unique
+  deviceId  String?  @map(&quot;device_id&quot;)
+  userAgent String?  @map(&quot;user_agent&quot;)
+  ipAddress String?  @map(&quot;ip_address&quot;)
+
+  isRevoked Boolean  @default(false) @map(&quot;is_revoked&quot;)
+  expiresAt DateTime @map(&quot;expires_at&quot;)
+  createdAt DateTime @default(now()) @map(&quot;created_at&quot;)
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+  @@map(&quot;refresh_tokens&quot;)
+}
+
+model LoginHistory {
+  id         String      @id @default(uuid())
+  userId     String      @map(&quot;user_id&quot;)
+  ipAddress  String      @map(&quot;ip_address&quot;)
+  userAgent  String?     @map(&quot;user_agent&quot;)
+  deviceId   String?     @map(&quot;device_id&quot;)
+
+  status     LoginStatus
+  failReason String?     @map(&quot;fail_reason&quot;)
+
+  loginAt    DateTime    @default(now()) @map(&quot;login_at&quot;)
+  logoutAt   DateTime?   @map(&quot;logout_at&quot;)
+
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([loginAt])
+  @@map(&quot;login_history&quot;)
+}
+
+enum LoginStatus {
+  SUCCESS
+  FAILED
+  BLOCKED
+  SUSPICIOUS
+}
+
+model PasswordReset {
+  id        String   @id @default(uuid())
+  userId    String   @map(&quot;user_id&quot;)
+  token     String   @unique
+
+  isUsed    Boolean  @default(false) @map(&quot;is_used&quot;)
+  usedAt    DateTime? @map(&quot;used_at&quot;)
+  expiresAt DateTime @map(&quot;expires_at&quot;)
+  createdAt DateTime @default(now()) @map(&quot;created_at&quot;)
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@map(&quot;password_resets&quot;)
+}
+
+model EmailVerification {
+  id        String   @id @default(uuid())
+  userId    String   @map(&quot;user_id&quot;)
+  token     String   @unique
+
+  isUsed    Boolean  @default(false) @map(&quot;is_used&quot;)
+  usedAt    DateTime? @map(&quot;used_at&quot;)
+  expiresAt DateTime @map(&quot;expires_at&quot;)
+  createdAt DateTime @default(now()) @map(&quot;created_at&quot;)
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@map(&quot;email_verifications&quot;)
+}</file><file path="apps/auth-service/src/modules/health/health.controller.ts">import { Controller, Get } from &apos;@nestjs/common&apos;;
+import { HealthService } from &apos;./health.service&apos;;
+import { ApiOperation } from &apos;@nestjs/swagger&apos;;
+import { SuccessMessage } from &apos;@hris/common&apos;;
+⋮----
+export class HealthController
+⋮----
+constructor(private readonly healthService: HealthService)
+⋮----
+getHealth(): object
+⋮----
+getPing()</file><file path="apps/auth-service/tsconfig.json">{
+  &quot;extends&quot;: &quot;@hris/typescript-config/nestjs.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;paths&quot;: {
+      &quot;@/*&quot;: [&quot;src/*&quot;],
+      &quot;@common/*&quot;: [&quot;src/common/*&quot;],
+      &quot;@config/*&quot;: [&quot;src/config/*&quot;],
+      &quot;@modules/*&quot;: [&quot;src/modules/*&quot;]
+    }
+  },
+  &quot;include&quot;: [&quot;src/**/*&quot;],
+  &quot;exclude&quot;: [&quot;node_modules&quot;, &quot;dist&quot;, &quot;test&quot;, &quot;src/generated&quot;]
+}</file><file path="apps/docs/app/page.tsx">import Image, { type ImageProps } from &apos;next/image&apos;;
+import { Button } from &apos;@hris/ui/button&apos;;
+import styles from &apos;./page.module.css&apos;;
+type Props = Omit&lt;ImageProps, &apos;src&apos;&gt; &amp; {
+  srcLight: string;
+  srcDark: string;
+};
+const ThemeImage = (props: Props) =&gt;</file><file path="apps/docs/eslint.config.js"></file><file path="apps/docs/package.json">{
+  &quot;name&quot;: &quot;docs&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next dev --port 3001&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;,
+    &quot;lint&quot;: &quot;eslint --max-warnings 0&quot;,
+    &quot;check-types&quot;: &quot;next typegen &amp;&amp; tsc --noEmit&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hris/ui&quot;: &quot;*&quot;,
+    &quot;next&quot;: &quot;16.1.5&quot;,
+    &quot;react&quot;: &quot;^19.2.0&quot;,
+    &quot;react-dom&quot;: &quot;^19.2.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@hris/eslint-config&quot;: &quot;*&quot;,
+    &quot;@hris/typescript-config&quot;: &quot;*&quot;,
+    &quot;@types/node&quot;: &quot;^22.15.3&quot;,
+    &quot;@types/react&quot;: &quot;19.2.2&quot;,
+    &quot;@types/react-dom&quot;: &quot;19.2.2&quot;,
+    &quot;eslint&quot;: &quot;^9.39.1&quot;,
+    &quot;typescript&quot;: &quot;5.9.2&quot;
+  }
+}</file><file path="apps/docs/tsconfig.json">{
+  &quot;extends&quot;: &quot;@hris/typescript-config/nextjs.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;plugins&quot;: [
+      {
+        &quot;name&quot;: &quot;next&quot;
+      }
+    ]
+  },
+  &quot;include&quot;: [
+    &quot;**/*.ts&quot;,
+    &quot;**/*.tsx&quot;,
+    &quot;next-env.d.ts&quot;,
+    &quot;next.config.js&quot;,
+    &quot;.next/types/**/*.ts&quot;
+  ],
+  &quot;exclude&quot;: [&quot;node_modules&quot;]
+}</file><file path="apps/web/app/page.tsx">import Image, { type ImageProps } from &apos;next/image&apos;;
+import { Button } from &apos;@hris/ui/button&apos;;
+import styles from &apos;./page.module.css&apos;;
+type Props = Omit&lt;ImageProps, &apos;src&apos;&gt; &amp; {
+  srcLight: string;
+  srcDark: string;
+};
+const ThemeImage = (props: Props) =&gt;</file><file path="apps/web/eslint.config.js"></file><file path="apps/web/package.json">{
+  &quot;name&quot;: &quot;web&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next dev --port 3000&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;,
+    &quot;lint&quot;: &quot;eslint --max-warnings 0&quot;,
+    &quot;check-types&quot;: &quot;next typegen &amp;&amp; tsc --noEmit&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hris/ui&quot;: &quot;*&quot;,
+    &quot;next&quot;: &quot;16.1.5&quot;,
+    &quot;react&quot;: &quot;^19.2.0&quot;,
+    &quot;react-dom&quot;: &quot;^19.2.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@hris/eslint-config&quot;: &quot;*&quot;,
+    &quot;@hris/typescript-config&quot;: &quot;*&quot;,
+    &quot;@types/node&quot;: &quot;^22.15.3&quot;,
+    &quot;@types/react&quot;: &quot;19.2.2&quot;,
+    &quot;@types/react-dom&quot;: &quot;19.2.2&quot;,
+    &quot;eslint&quot;: &quot;^9.39.1&quot;,
+    &quot;typescript&quot;: &quot;5.9.2&quot;
+  }
+}</file><file path="apps/web/tsconfig.json">{
+  &quot;extends&quot;: &quot;@hris/typescript-config/nextjs.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;plugins&quot;: [
+      {
+        &quot;name&quot;: &quot;next&quot;
+      }
+    ]
+  },
+  &quot;include&quot;: [
+    &quot;**/*.ts&quot;,
+    &quot;**/*.tsx&quot;,
+    &quot;next-env.d.ts&quot;,
+    &quot;next.config.js&quot;,
+    &quot;.next/types/**/*.ts&quot;
+  ],
+  &quot;exclude&quot;: [&quot;node_modules&quot;]
+}</file><file path="eslint.config.mjs">// add override for any (a metric ton of them, initial conversion)
+⋮----
+// we generally use this in isFunction, not via calling</file><file path="commitlint.config.js"></file><file path="tsconfig.json">{
+  &quot;extends&quot;: &quot;@hris/typescript-config/base.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;allowJs&quot;: true,
+    &quot;noEmit&quot;: true
+  },
+  &quot;include&quot;: [&quot;.prettierrc.mjs&quot;, &quot;commitlint.config.js&quot;, &quot;eslint.config.mjs&quot;]
+}</file><file path="apps/auth-service/src/app.module.ts">import { Module } from &apos;@nestjs/common&apos;;
+import { ConfigModule } from &apos;@nestjs/config&apos;;
+import { HealthModule } from &apos;@modules/health/health.module&apos;;
+import { PrismaModule } from &apos;@modules/prisma/prisma.module&apos;;
+import { AuthModule } from &apos;@modules/auth/auth.module&apos;;
+⋮----
+export class AppModule</file><file path="apps/auth-service/src/main.ts">import { GlobalExceptionFilter, TransformInterceptor } from &apos;@hris/common&apos;;
+import { NestFactory, Reflector } from &apos;@nestjs/core&apos;;
+import { Logger, ValidationPipe } from &apos;@nestjs/common&apos;;
+import { DocumentBuilder, SwaggerModule } from &apos;@nestjs/swagger&apos;;
+import { NestExpressApplication } from &apos;@nestjs/platform-express&apos;;
+import { ConfigService } from &apos;@nestjs/config&apos;;
+import { AppModule } from &apos;./app.module&apos;;
+import fs from &apos;fs&apos;;
+async function bootstrap()</file><file path="package.json">{
+  &quot;name&quot;: &quot;hris-micorservices&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;turbo run dev&quot;,
+    &quot;dev:backend&quot;: &quot;turbo run dev --filter=&apos;./apps/*-service&apos; --filter=&apos;./apps/api-gateway&apos;&quot;,
+    &quot;dev:web&quot;: &quot;turbo run dev --filter=web&quot;,
+    &quot;dev:gateway&quot;: &quot;turbo run dev --filter=api-gateway&quot;,
+    &quot;dev:auth&quot;: &quot;turbo run dev --filter=auth-service&quot;,
+    &quot;dev:employee&quot;: &quot;turbo run dev --filter=employee-service&quot;,
+    &quot;dev:attendance&quot;: &quot;turbo run dev --filter=attendance-service&quot;,
+    &quot;dev:leave&quot;: &quot;turbo run dev --filter=leave-service&quot;,
+    &quot;dev:payroll&quot;: &quot;turbo run dev --filter=payroll-service&quot;,
+    &quot;dev:notification&quot;: &quot;turbo run dev --filter=notification-service&quot;,
+    &quot;build&quot;: &quot;turbo run build&quot;,
+    &quot;build:packages&quot;: &quot;turbo run build --filter=&apos;./packages/*&apos;&quot;,
+    &quot;build:backend&quot;: &quot;turbo run build --filter=&apos;./apps/*-service&apos; --filter=&apos;./apps/api-gateway&apos;&quot;,
+    &quot;build:web&quot;: &quot;turbo run build --filter=web&quot;,
+    &quot;test&quot;: &quot;turbo run test&quot;,
+    &quot;test:cov&quot;: &quot;turbo run test:cov&quot;,
+    &quot;test:e2e&quot;: &quot;turbo run test:e2e&quot;,
+    &quot;lint&quot;: &quot;turbo run lint&quot;,
+    &quot;format&quot;: &quot;prettier --write \&quot;**/*.{ts,tsx,md}\&quot;&quot;,
+    &quot;check-types&quot;: &quot;turbo run check-types&quot;,
+    &quot;clean&quot;: &quot;turbo run clean &amp;&amp; rm -rf node_modules .turbo&quot;,
+    &quot;prisma:generate&quot;: &quot;turbo prisma:generate&quot;,
+    &quot;prisma:studio&quot;: &quot;turbo prisma:studio&quot;,
+    &quot;prisma:migrate&quot;: &quot;turbo prisma:migrate&quot;,
+    &quot;prepare&quot;: &quot;husky install&quot;,
+    &quot;commit&quot;: &quot;cz&quot;
+  },
+  &quot;workspaces&quot;: [
+    &quot;apps/*&quot;,
+    &quot;packages/*&quot;
+  ],
+  &quot;config&quot;: {
+    &quot;commitizen&quot;: {
+      &quot;path&quot;: &quot;cz-conventional-changelog&quot;
+    }
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@hris/eslint-config&quot;: &quot;*&quot;,
+    &quot;@hris/typescript-config&quot;: &quot;*&quot;,
+    &quot;@commitlint/cli&quot;: &quot;^20.4.1&quot;,
+    &quot;@commitlint/config-conventional&quot;: &quot;^20.4.1&quot;,
+    &quot;cz-conventional-changelog&quot;: &quot;^3.3.0&quot;,
+    &quot;commitizen&quot;: &quot;^4.3.1&quot;,
+    &quot;husky&quot;: &quot;^8.0.0&quot;,
+    &quot;lint-staged&quot;: &quot;^16.2.7&quot;,
+    &quot;prettier&quot;: &quot;^3.7.4&quot;,
+    &quot;turbo&quot;: &quot;^2.8.7&quot;
+  },
+  &quot;packageManager&quot;: &quot;npm@11.6.2&quot;,
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;&gt;=20.0.0&quot;,
+    &quot;npm&quot;: &quot;&gt;=10.0.0&quot;
+  }
+}</file></files></repomix>

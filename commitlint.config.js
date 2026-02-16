@@ -91,6 +91,7 @@ module.exports =  {
         'lint-staged',
         'prettier',
         'turborepo',
+        'repomix',
       ],
     ],
     'scope-case': [2, 'always', 'lower-case'],

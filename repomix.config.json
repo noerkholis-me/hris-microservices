@@ -6,19 +6,19 @@
   "output": {
     "filePath": "hris-repomix-output",
     "style": "xml",
-    "parsableStyle": false,
+    "parsableStyle": true,
     "fileSummary": true,
     "directoryStructure": true,
     "files": true,
-    "removeComments": false,
-    "removeEmptyLines": false,
-    "compress": false,
+    "removeComments": true,
+    "removeEmptyLines": true,
+    "compress": true,
     "topFilesLength": 5,
     "showLineNumbers": false,
     "truncateBase64": false,
     "copyToClipboard": false,
-    "includeFullDirectoryStructure": false,
-    "tokenCountTree": false,
+    "includeFullDirectoryStructure": true,
+    "tokenCountTree": true,
     "git": {
       "sortByChanges": true,
       "sortByChangesMaxCommits": 100,
@@ -27,12 +27,36 @@
       "includeLogsCount": 50
     }
   },
-  "include": [],
+  "include": [
+    "apps/**/*",
+    "package.json",
+    "tsconfig.json",
+    "commitlint.config.js",
+    "eslint.config.mjs",
+    "jest.config.js"
+  ],
   "ignore": {
     "useGitignore": true,
     "useDotIgnore": true,
     "useDefaultPatterns": true,
-    "customPatterns": []
+    "customPatterns": [
+      "**/node_modules/**",
+      "**/public/**",
+      "**/swagger-spec.json",
+      "**/migration/**",
+      "**/dist/**",
+      "**/.cache/**",
+      "**/coverage/**",
+      "**/tmp/**",
+      "**/.vercel/**",
+      "**/.next/**",
+      "**/*.log",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "**/yarn.lock",
+      "**/.env*",
+      "**/generated/prisma/**"
+    ]
   },
   "security": {
     "enableSecurityCheck": true
