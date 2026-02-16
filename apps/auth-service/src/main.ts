@@ -5,7 +5,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
 import { AppModule } from './app.module';
-import fs from 'fs';
+import cookieParser from 'cookie-parser';
+// import fs from 'fs';
 
 async function bootstrap() {
   const logger = new Logger('NestApplication');
@@ -14,6 +15,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const reflector = app.get(Reflector);
 
+  app.use(cookieParser());
   app.useGlobalInterceptors(new TransformInterceptor(reflector));
   app.useGlobalFilters(new GlobalExceptionFilter());
 
@@ -38,7 +40,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  fs.writeFileSync('./swagger-spec.json', JSON.stringify(document, null, 2));
+  // fs.writeFileSync('./swagger-spec.json', JSON.stringify(document, null, 2));
 
   SwaggerModule.setup('api/docs', app, document);
 
